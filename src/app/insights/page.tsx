@@ -14,6 +14,14 @@ export default function InsightsPage() {
                 <header className="space-y-3">
                     <p className="eyebrow">Insights</p>
                     <h1 className="text-5xl sm:text-7xl">Sharp Notes For Product Teams</h1>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                        <Link href="/insights/playbooks" className="rounded-full border border-(--color-border) px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-purple">
+                            Playbooks
+                        </Link>
+                        <Link href="/insights/opinion" className="rounded-full border border-(--color-border) px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-purple">
+                            Opinion
+                        </Link>
+                    </div>
                 </header>
 
                 <div className="grid gap-4 md:grid-cols-2">

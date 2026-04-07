@@ -7,12 +7,15 @@ export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({
+type BlogRouteParams = { slug: string };
+
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const post = getPostBySlug(params.slug);
+  params: BlogRouteParams | Promise<BlogRouteParams>;
+}): Promise<Metadata> {
+  const { slug } = await Promise.resolve(params);
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return { title: "Post Not Found | Brandroad Inc" };
@@ -24,12 +27,13 @@ export function generateMetadata({
   };
 }
 
-export default function BlogDetailPage({
+export default async function BlogDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: BlogRouteParams | Promise<BlogRouteParams>;
 }) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await Promise.resolve(params);
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();

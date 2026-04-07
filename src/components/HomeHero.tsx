@@ -11,12 +11,12 @@ export default function HomeHero() {
                 <div className="space-y-7">
                     <p className="eyebrow">Design Evangelists</p>
                     <motion.h1
-                        className="max-w-4xl text-5xl leading-[0.9] sm:text-7xl lg:text-8xl"
+                        className="max-w-4xl text-5xl leading-[0.9] sm:text-7xl lg:text-6xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
                     >
-                        STOP TRAUMATIZING YOUR USERS.
+                        BUILD PRODUCTS PEOPLE TRUST ON FIRST CLICK.
                     </motion.h1>
                     <motion.h2
                         className="max-w-2xl text-base leading-relaxed text-(--color-ink)/80 sm:text-xl"
@@ -24,8 +24,8 @@ export default function HomeHero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
                     >
-                        Leta hizo chaotic apps na vibarua tufanyie deliverance. We engineer world-class SaaS architecture, build
-                        heavy-hitting brand identities, and execute the design tasks you have been putting off.
+                        Bring us the chaos, we will turn it into clarity. From SaaS UX architecture to high-conviction brand systems,
+                        Brandroad helps ambitious teams ship faster, look sharper, and make every user journey feel "iko fiti".
                     </motion.h2>
                     <motion.div
                         className="flex flex-wrap gap-3"
@@ -33,10 +33,10 @@ export default function HomeHero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.16, ease: "easeOut" }}
                     >
-                        <LinkButton href="/#the-menu" ariaLabel="View the menu services">
+                        <LinkButton href="/services" ariaLabel="View the menu services">
                             View The Menu
                         </LinkButton>
-                        <LinkButton href="/#the-gatekeeper" variant="outline" ariaLabel="Meet Lampson section">
+                        <LinkButton href="/gatekeeper" variant="outline" ariaLabel="Meet Lampson section">
                             Meet Lampson
                         </LinkButton>
                     </motion.div>

@@ -9,8 +9,11 @@ export function generateStaticParams() {
     return posts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-    const post = getPostBySlug(params.slug);
+type InsightRouteParams = { slug: string };
+
+export async function generateMetadata({ params }: { params: InsightRouteParams | Promise<InsightRouteParams> }): Promise<Metadata> {
+    const { slug } = await Promise.resolve(params);
+    const post = getPostBySlug(slug);
 
     if (!post) {
         return {
@@ -31,8 +34,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
 }
 
-export default function InsightDetailPage({ params }: { params: { slug: string } }) {
-    const post = getPostBySlug(params.slug);
+export default async function InsightDetailPage({ params }: { params: InsightRouteParams | Promise<InsightRouteParams> }) {
+    const { slug } = await Promise.resolve(params);
+    const post = getPostBySlug(slug);
 
     if (!post) {
         notFound();

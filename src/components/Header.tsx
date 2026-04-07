@@ -5,13 +5,44 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LinkButton } from "@/components/ui/Button";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
-const navLinks = [
-  { label: "Our Work", href: "/#our-work" },
-  { label: "The Menu", href: "/#the-menu" },
-  { label: "The Gatekeeper", href: "/#the-gatekeeper" },
-  { label: "Insights", href: "/insights" },
+const navGroups = [
+  {
+    label: "Our Work",
+    href: "/projects",
+    items: [
+      { label: "All Case Studies", href: "/projects" },
+      { label: "Paywave SaaS Redesign", href: "/projects/paywave-saas-redesign" },
+      { label: "Kopa Brand System", href: "/projects/kopa-brand-system" },
+      { label: "Tuma Commerce Site", href: "/projects/tuma-commerce-site" },
+    ],
+  },
+  {
+    label: "The Menu",
+    href: "/services",
+    items: [
+      { label: "All Services", href: "/services" },
+      { label: "UI/UX Design", href: "/services/ui-ux-design" },
+      { label: "Brand Identity", href: "/services/brand-identity" },
+      { label: "Web Design and Development", href: "/services/web-design-development" },
+      { label: "Creative Vibarua", href: "/services/creative-vibarua" },
+    ],
+  },
+  {
+    label: "The Gatekeeper",
+    href: "/gatekeeper",
+    items: [{ label: "About Lampson", href: "/gatekeeper" }],
+  },
+  {
+    label: "Insights",
+    href: "/insights",
+    items: [
+      { label: "All Insights", href: "/insights" },
+      { label: "Playbooks", href: "/insights/playbooks" },
+      { label: "Opinion", href: "/insights/opinion" },
+    ],
+  },
 ];
 
 export default function Header() {
@@ -30,6 +61,8 @@ export default function Header() {
     setIsOpen(false);
   };
 
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-(--color-border) bg-background/95 backdrop-blur-xl">
@@ -47,18 +80,36 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={`text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${pathname === link.href
-                  ? "text-brand-purple"
-                  : "text-(--color-ink)/85 hover:text-brand-purple"
-                  }`}
-              >
-                {link.label}
-              </Link>
+          <nav className="hidden items-center gap-7 lg:flex">
+            {navGroups.map((group) => (
+              <div key={group.label} className="group relative">
+                <Link
+                  href={group.href}
+                  className={`inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${isActive(group.href)
+                    ? "text-brand-purple"
+                    : "text-(--color-ink)/85 hover:text-brand-purple"
+                    }`}
+                >
+                  {group.label}
+                  <ChevronDown size={14} className="opacity-65" />
+                </Link>
+
+                <div className="invisible absolute left-0 top-8 z-50 w-64 translate-y-1 rounded-2xl border border-(--color-border) bg-(--color-muted-surface) p-3 opacity-0 shadow-[0_20px_45px_rgba(107,33,168,0.16)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-orange">{group.label}</p>
+                  <ul className="mt-1 space-y-1">
+                    {group.items.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className="block rounded-xl px-2 py-2 text-sm text-(--color-ink)/80 transition hover:bg-brand-purple/8 hover:text-brand-purple"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             ))}
             <LinkButton href="/contact" size="sm" ariaLabel="Start a project">
               Start a Project
@@ -112,16 +163,28 @@ export default function Header() {
         </div>
 
         <nav className="flex flex-1 flex-col justify-center gap-8 px-2">
-          {navLinks.map((link, index) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={closeMenu}
-              className="text-3xl font-semibold uppercase tracking-[0.14em] transition-transform duration-300 hover:translate-x-2 sm:text-4xl"
-              style={{ transitionDelay: `${index * 60}ms` }}
-            >
-              {link.label}
-            </Link>
+          {navGroups.map((group, index) => (
+            <div key={group.label} className="space-y-2" style={{ transitionDelay: `${index * 60}ms` }}>
+              <Link
+                href={group.href}
+                onClick={closeMenu}
+                className="text-3xl font-semibold uppercase tracking-[0.14em] transition-transform duration-300 hover:translate-x-2 sm:text-4xl"
+              >
+                {group.label}
+              </Link>
+              <div className="grid gap-1 pl-1">
+                {group.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="text-sm uppercase tracking-widest text-(--color-ink)/70"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
           <LinkButton href="/contact" className="mt-4 w-fit" onClick={closeMenu} ariaLabel="Start a project">
             Start a Project

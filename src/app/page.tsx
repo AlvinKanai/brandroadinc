@@ -7,26 +7,30 @@ import { organizationSchema } from "@/lib/seo";
 const serviceCards = [
     {
         title: "UI/UX",
-        subtitle: "Bad UI is a liability.",
-        text: "We build sleek, scalable mobile apps and complex SaaS platforms that users actually want to navigate.",
+        subtitle: "Product clarity as a growth lever.",
+        text: "We design robust product experiences for SaaS and mobile platforms where every interaction is intentional, measurable, and easy to trust.",
+        href: "/services/ui-ux-design",
         className: "md:col-span-2 md:row-span-2",
     },
     {
         title: "Branding",
-        subtitle: "Ditch the templates.",
-        text: "Your startup needs an identity that commands respect from Day 1. We build visual identities that make you look like an industry heavyweight.",
+        subtitle: "Identity built for scale.",
+        text: "We craft strategic brand systems that align product, marketing, and investor storytelling from first impression to category authority.",
+        href: "/services/brand-identity",
         className: "md:col-span-1",
     },
     {
         title: "Websites",
-        subtitle: "Bounce Rate is a Sin.",
-        text: "Stop sending traffic to a landing page from 2010. We design lightning-fast digital storefronts and landing pages engineered to make visitors click Buy Now.",
+        subtitle: "Conversion without compromise.",
+        text: "We build high-performance websites and landing pages designed to communicate value quickly and drive qualified action.",
+        href: "/services/web-design-development",
         className: "md:col-span-1",
     },
     {
         title: "Vibarua / Odd Jobs",
-        subtitle: "Everything else.",
-        text: "Investor pitch decks that secure the bag, killer merch, event posters, and corporate presentations. Send the brief. We handle the daily grind so you can focus on scaling.",
+        subtitle: "Strategic creative support.",
+        text: "From investor decks to campaign assets, we execute high-impact design tasks at startup speed with senior-level quality control.",
+        href: "/services/creative-vibarua",
         className: "md:col-span-2",
     },
 ];
@@ -53,6 +57,12 @@ export default function Home() {
                                 <h3 className="text-2xl sm:text-3xl">{service.title}</h3>
                                 <p className="mt-4 text-base font-semibold text-brand-purple">{service.subtitle}</p>
                                 <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80 sm:text-base">{service.text}</p>
+                                <Link
+                                    href={service.href}
+                                    className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-brand-purple"
+                                >
+                                    Open Service Page
+                                </Link>
                             </article>
                         ))}
                     </div>
@@ -69,10 +79,13 @@ export default function Home() {
                     </article>
                     <article className="card p-6 sm:p-8">
                         <p className="text-sm leading-relaxed text-(--color-ink)/80 sm:text-base">
-                            Clean, functional design is our religion, and Lampson runs the pulpit. Absolutely nothing leaves
-                            Brandroad Inc. without his stamp of approval. Kama design yako inatesa users or your logo inakaa template
-                            ya make it pop, anaigonga reject on the spot. We fix the chaos so your users do not have to suffer.
+                            Lampson leads quality control across every engagement. No visual direction, UX pattern, or interface
+                            release goes live without meeting our standards for usability, consistency, and business impact. If the
+                            work introduces friction, it is revised. If it improves clarity and trust, it ships.
                         </p>
+                        <Link href="/gatekeeper" className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-brand-purple">
+                            Meet Lampson
+                        </Link>
                     </article>
                 </div>
             </section>

@@ -5,9 +5,14 @@ export type ProjectRecord = {
   clientName: string;
   coverImageUrl: string;
   headings: string[];
+  summary?: string;
+  scope?: string[];
+  timeline?: string;
   theProblem: string;
   theSolution: string;
   bodyContent: string;
+  results?: Array<{ label: string; value: string }>;
+  gallery?: Array<{ title: string; caption: string; imageUrl: string }>;
   testimonialQuote: string;
   testimonialAuthor: string;
   testimonialRole: string;
@@ -25,6 +30,17 @@ export type PostRecord = {
   publishedAt: string;
 };
 
+export type ServiceRecord = {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  summary: string;
+  positioning: string;
+  deliverables: string[];
+  process: string[];
+  outcomes: string[];
+};
+
 export const projects: ProjectRecord[] = [
   {
     id: "prj_1",
@@ -33,11 +49,24 @@ export const projects: ProjectRecord[] = [
     clientName: "Paywave",
     coverImageUrl: "/logo.png",
     headings: ["Onboarding", "Conversion", "Trust Layers", "Retention"],
+    summary: "A growth-focused SaaS redesign that transformed trial activation and established a consistent trust-first product language.",
+    scope: ["UX Audit", "Information Architecture", "UI System", "Onboarding Flow"],
+    timeline: "12 weeks",
     theProblem:
       "Trial users were dropping before activation because the interface drowned key actions in clutter and every screen felt like a different product.",
     theSolution:
       "We rebuilt IA, stripped friction, and engineered a high-trust pattern system that made every next step obvious without dumbing down power-user workflows.",
     bodyContent: `<h2>What We Changed</h2><p>We started with a brutal journey audit. Every click had to defend itself. If a step did not increase confidence or move the user closer to activation, it got cut.</p><p>Then we restructured the onboarding flow into one clear narrative: setup, connect, verify, launch. No mystery tabs. No passive-aggressive empty states. Just progress that feels rewarding.</p><h3>Execution Highlights</h3><ul><li>Unified component language across dashboard and setup surfaces</li><li>Reduced noisy UI chrome and boosted action hierarchy</li><li>Designed trust moments around billing and permissions</li><li>Shipped responsive QA pass for low-end Android devices</li></ul><p>The result was not just prettier UI. It was operational calm. Product, support, and growth teams all got fewer "where do I click" complaints and more customers reaching first value faster.</p>`,
+    results: [
+      { label: "Activation Rate", value: "+41%" },
+      { label: "Time to First Value", value: "-34%" },
+      { label: "Support Tickets", value: "-28%" },
+    ],
+    gallery: [
+      { title: "Platform Dashboard", caption: "High-clarity command center with progressive disclosure.", imageUrl: "/logo.png" },
+      { title: "Onboarding Flow", caption: "Four-step guided setup with confidence checkpoints.", imageUrl: "/logo.png" },
+      { title: "Billing Experience", caption: "Rewritten trust and plan comparison surfaces.", imageUrl: "/logo.png" },
+    ],
     testimonialQuote: "They turned our UX chaos into a repeatable growth system with swagger and discipline.",
     testimonialAuthor: "Nia Otieno",
     testimonialRole: "Head of Product",
@@ -50,11 +79,24 @@ export const projects: ProjectRecord[] = [
     clientName: "Kopa Labs",
     coverImageUrl: "/logo.png",
     headings: ["Identity", "Guidelines", "Product Voice", "Scale"],
+    summary: "A complete brand architecture reboot to align product, marketing, and investor storytelling.",
+    scope: ["Brand Strategy", "Visual Identity", "Voice System", "Brand Guidelines"],
+    timeline: "8 weeks",
     theProblem:
       "The startup looked inconsistent across investor decks, app screens, and social channels, so trust was leaking before sales calls even started.",
     theSolution:
       "We built a hard-working visual system with reusable type, color, and narrative assets so every touchpoint looked like one serious company with personality.",
     bodyContent: `<h2>Brand at Scale</h2><p>We ran a brand stress test across pitch decks, product UI, social posts, and sales collateral. Every inconsistency was mapped to one of three causes: no rules, vague rules, or ignored rules.</p><p>Then we shipped a practical brand system built for speed, not for museum shelves: typography hierarchy, tokenized color usage, tone-of-voice guardrails, and reusable templates for real weekly output.</p><h3>What Changed Internally</h3><ul><li>Design and marketing stopped arguing about shades and spacing</li><li>Founders could brief freelancers in one document instead of twelve voice notes</li><li>Product UI and external brand stopped looking like cousins from different towns</li></ul><p>Kopa went from "promising startup" to "credible category contender" in under one quarter.</p>`,
+    results: [
+      { label: "Pitch Win Rate", value: "+22%" },
+      { label: "Design Production Speed", value: "+37%" },
+      { label: "Brand Consistency Score", value: "91/100" },
+    ],
+    gallery: [
+      { title: "Identity System", caption: "Core logo lockups, color logic, and scale rules.", imageUrl: "/logo.png" },
+      { title: "Narrative Deck", caption: "Investor story arc with modular slides.", imageUrl: "/logo.png" },
+      { title: "Social Kit", caption: "Launch-ready templates for growth channels.", imageUrl: "/logo.png" },
+    ],
     testimonialQuote: "Finally our brand looks like the company we are becoming, not the one we started with in a rush.",
     testimonialAuthor: "Liam Mwangi",
     testimonialRole: "Founder",
@@ -67,10 +109,23 @@ export const projects: ProjectRecord[] = [
     clientName: "Tuma",
     coverImageUrl: "/logo.png",
     headings: ["Performance", "Checkout", "Merchandising", "Mobile Trust"],
+    summary: "A conversion-centered commerce platform redesign with fast pages and lower checkout friction.",
+    scope: ["E-commerce UX", "Product Storytelling", "Checkout Optimization", "Performance"],
+    timeline: "10 weeks",
     theProblem: "High traffic but low checkout completion, weak mobile trust cues, and product pages that answered almost none of the questions buyers had.",
     theSolution:
       "We shipped a conversion-first storefront with product storytelling bento modules, cleaner checkout UX, and trust-first messaging at each high-friction point.",
     bodyContent: `<h2>Conversion Engineering</h2><p>We treated each product page like a salesperson that never sleeps. That meant clearer value framing, stronger social proof, and obvious size, shipping, and returns information before users had to hunt for it.</p><p>Checkout got a full simplification pass with mobile-first spacing, clearer field labels, and payment reassurance where anxiety usually spikes.</p><h3>Impact Drivers</h3><ul><li>Performance budget enforced for product imagery and scripts</li><li>Copy architecture rebuilt around user objections</li><li>Cart and checkout surfaced confidence cues at exactly the right moments</li></ul><p>Traffic stayed the same. Revenue per session did not. That is the difference between a pretty storefront and a selling system.</p>`,
+    results: [
+      { label: "Checkout Completion", value: "+29%" },
+      { label: "Revenue Per Session", value: "+18%" },
+      { label: "Mobile Bounce", value: "-24%" },
+    ],
+    gallery: [
+      { title: "Product Detail Page", caption: "Bento storytelling for conversion and trust.", imageUrl: "/logo.png" },
+      { title: "Cart UX", caption: "Streamlined cart with clear value and shipping logic.", imageUrl: "/logo.png" },
+      { title: "Checkout Journey", caption: "Reduced field complexity and boosted completion.", imageUrl: "/logo.png" },
+    ],
     testimonialQuote: "The new site prints confidence and conversions. Our growth team finally smiles on Monday mornings.",
     testimonialAuthor: "Asha Were",
     testimonialRole: "Growth Lead",
@@ -125,10 +180,106 @@ export const posts: PostRecord[] = [
   },
 ];
 
+export const services: ServiceRecord[] = [
+  {
+    slug: "ui-ux-design",
+    shortTitle: "UI/UX",
+    title: "UI/UX Design for SaaS and Digital Products",
+    summary:
+      "We architect interfaces that reduce confusion, increase adoption, and make complex product logic feel effortless.",
+    positioning:
+      "For product teams that need world-class UX without enterprise drama.",
+    deliverables: [
+      "UX audits and friction mapping",
+      "Information architecture and user flows",
+      "High-fidelity interface design",
+      "Design system foundations",
+      "Responsive QA and accessibility review",
+    ],
+    process: [
+      "Discover user and business constraints",
+      "Map critical journeys and friction zones",
+      "Prototype, validate, and stress-test",
+      "Ship high-fidelity screens with implementation notes",
+    ],
+    outcomes: ["Higher activation", "Faster task completion", "Lower support dependency"],
+  },
+  {
+    slug: "brand-identity",
+    shortTitle: "Branding",
+    title: "Brand Identity Systems for Ambitious Startups",
+    summary:
+      "From logo logic to tone of voice, we build identity systems that scale across product, marketing, and investor communication.",
+    positioning:
+      "For founders who need a credible brand before the next growth sprint.",
+    deliverables: [
+      "Brand strategy and narrative",
+      "Visual identity and usage rules",
+      "Voice and messaging framework",
+      "Sales and social template systems",
+    ],
+    process: [
+      "Position the brand in its market category",
+      "Define personality, voice, and visual principles",
+      "Design scalable assets and governance",
+      "Launch with practical team-ready guidelines",
+    ],
+    outcomes: ["Stronger market trust", "Faster content production", "Consistent brand experience"],
+  },
+  {
+    slug: "web-design-development",
+    shortTitle: "Websites",
+    title: "Conversion-First Websites and Landing Pages",
+    summary:
+      "We design and build high-performance websites that move visitors from curiosity to action with confidence.",
+    positioning:
+      "For teams done with pretty websites that do not convert.",
+    deliverables: [
+      "Website strategy and page architecture",
+      "Landing page UX and copy structure",
+      "Performance-focused visual design",
+      "Conversion optimization recommendations",
+    ],
+    process: [
+      "Audit funnel and messaging gaps",
+      "Design modular pages with CTA logic",
+      "Optimize performance and trust layers",
+      "Launch and iterate with analytics",
+    ],
+    outcomes: ["Higher conversion rate", "Improved page speed", "Clearer buyer journey"],
+  },
+  {
+    slug: "creative-vibarua",
+    shortTitle: "Vibarua",
+    title: "Strategic Creative Support (Vibarua)",
+    summary:
+      "Pitch decks, campaign assets, and rapid design support delivered with senior-level quality and startup speed.",
+    positioning:
+      "For fast-moving teams that need execution without hand-holding.",
+    deliverables: [
+      "Investor and sales decks",
+      "Campaign and launch collateral",
+      "Social and event creative",
+      "Presentation and internal communication design",
+    ],
+    process: [
+      "Clarify objective and audience",
+      "Define story structure and visual direction",
+      "Produce assets in rapid review cycles",
+      "Deliver reusable editable source kits",
+    ],
+    outcomes: ["Faster campaign launch", "Sharper communication", "Higher design consistency"],
+  },
+];
+
 export function getProjectBySlug(slug: string): ProjectRecord | undefined {
   return projects.find((project) => project.slug === slug);
 }
 
 export function getPostBySlug(slug: string): PostRecord | undefined {
   return posts.find((post) => post.slug === slug);
+}
+
+export function getServiceBySlug(slug: string): ServiceRecord | undefined {
+  return services.find((service) => service.slug === slug);
 }

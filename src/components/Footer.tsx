@@ -3,9 +3,9 @@ import { LinkButton } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
 const pages = [
-  { label: "Our Work", href: "/#our-work" },
-  { label: "The Menu", href: "/#the-menu" },
-  { label: "The Gatekeeper", href: "/#the-gatekeeper" },
+  { label: "Our Work", href: "/projects" },
+  { label: "The Menu", href: "/services" },
+  { label: "The Gatekeeper", href: "/gatekeeper" },
   { label: "Insights", href: "/insights" },
 ];
 
@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="site-shell py-16 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-5">
-            <p className="eyebrow">Massive Contact Footer</p>
+            <p className="eyebrow">REACH OUT TO US</p>
             <h2 className="max-w-4xl text-5xl leading-[0.95] sm:text-7xl">LET&apos;S GET TO WORK.</h2>
             <p className="max-w-xl text-base leading-relaxed text-(--color-ink)/80 sm:text-lg">
               Stop procrastinating. Drop your brief, let&apos;s fix that design mess, and launch your product. &quot;Iko Fiti&quot; ndio Amen yetu. 🚀
@@ -39,12 +39,12 @@ export default function Footer() {
                 className="h-11 rounded-full bg-brand-orange px-6 text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-[0_10px_25px_rgba(249,115,22,0.25)] hover:bg-[#EA580C] sm:mt-8 sm:h-12"
                 aria-label="Submit email"
               >
-                Send Brief
+                Subscribe
               </button>
             </form>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-1">
+          <div className="grid gap-10 sm:grid-cols-1 lg:grid-cols-2">
             <div>
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em]">Explore</p>
               <ul className="space-y-2 text-sm">
@@ -69,11 +69,6 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6">
-                <LinkButton href="/admin/login" variant="outline" size="sm" ariaLabel="Open admin login">
-                  Admin Login
-                </LinkButton>
-              </div>
             </div>
           </div>
         </div>
