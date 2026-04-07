@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --color-page-bg: #ffffff;
+  --color-page-bg: #f7f5ef;
   --color-ink: #0f172a;
   --color-brand-purple: #6b21a8;
   --color-brand-orange: #f97316;
-  --color-muted-surface: #f8fafc;
-  --color-border: #6b21a826;
+  --color-muted-surface: #fffdf8;
+  --color-border: #6b21a830;
 }
 
 :root.dark {
@@ -16,17 +16,6 @@
   --color-brand-orange: #fb923c;
   --color-muted-surface: #111827;
   --color-border: #ffffff21;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --color-page-bg: #09090b;
-    --color-ink: #f8fafc;
-    --color-brand-purple: #c084fc;
-    --color-brand-orange: #fb923c;
-    --color-muted-surface: #111827;
-    --color-border: #ffffff21;
-  }
 }
 
 @theme inline {
@@ -39,8 +28,8 @@
 
 body {
   background:
-    radial-gradient(circle at 7% 0%, color-mix(in srgb, var(--color-brand-purple), transparent 90%) 0%, transparent 32%),
-    radial-gradient(circle at 96% 24%, color-mix(in srgb, var(--color-brand-orange), transparent 90%) 0%, transparent 34%),
+    radial-gradient(circle at 7% 0%, color-mix(in srgb, var(--color-brand-purple), transparent 92%) 0%, transparent 36%),
+    radial-gradient(circle at 96% 24%, color-mix(in srgb, var(--color-brand-orange), transparent 92%) 0%, transparent 40%),
     var(--color-page-bg);
   color: var(--color-ink);
   font-family: var(--font-jakarta), sans-serif;
@@ -102,10 +91,14 @@ a:hover {
 }
 
 .card {
-  background: linear-gradient(180deg, color-mix(in srgb, var(--color-brand-purple), white 95%) 0%, var(--color-muted-surface) 100%);
+  background: linear-gradient(180deg, color-mix(in srgb, white, var(--color-brand-purple) 2%) 0%, var(--color-muted-surface) 100%);
   border: 1px solid var(--color-border);
   border-radius: 1.1rem;
   box-shadow: 0 12px 28px color-mix(in srgb, var(--color-brand-purple), transparent 92%);
+}
+
+.muted-copy {
+  color: color-mix(in srgb, var(--color-ink), transparent 20%);
 }
 
 .accent-button {

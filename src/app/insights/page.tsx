@@ -20,7 +20,7 @@ export default function InsightsPage() {
                     {posts.map((post) => (
                         <article key={post.id} className="card p-6 sm:p-8">
                             <h2 className="text-3xl leading-tight">{post.title}</h2>
-                            <p className="mt-3 text-sm leading-relaxed text-slate-700">{post.metaDescription}</p>
+                            <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80">{post.metaDescription}</p>
                             <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
                                 {new Date(post.publishedAt).toLocaleDateString("en-KE", {
                                     year: "numeric",

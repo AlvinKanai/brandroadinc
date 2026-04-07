@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-(--color-border) bg-white/90 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-(--color-border) bg-background/95 backdrop-blur-xl">
         <div className="site-shell flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
             <Image

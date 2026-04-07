@@ -21,7 +21,7 @@ export default function ProjectsPage() {
                         <article key={project.id} className="card p-6 sm:p-8">
                             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">{project.clientName}</p>
                             <h2 className="mt-4 text-3xl leading-tight">{project.title}</h2>
-                            <p className="mt-3 text-sm leading-relaxed text-slate-700">{project.theProblem}</p>
+                            <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80">{project.theProblem}</p>
                             <Link
                                 href={`/projects/${project.slug}`}
                                 className="mt-5 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-brand-purple"

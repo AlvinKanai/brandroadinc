@@ -28,7 +28,7 @@ export default function BlogPage() {
               <h2 className="mt-3 text-2xl leading-tight">{post.title}</h2>
               <p className="mt-2 text-xs uppercase tracking-[0.13em] text-(--color-ink)/58">{post.date}</p>
               <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/78">{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} className="mt-4 inline-flex text-sm font-bold uppercase tracking-[0.12em] text-(--color-accent)">
+              <Link href={`/blog/${post.slug}`} className="mt-4 inline-flex text-sm font-bold uppercase tracking-[0.12em] text-brand-purple">
                 Read article
               </Link>
             </article>

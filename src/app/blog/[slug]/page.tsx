@@ -38,7 +38,7 @@ export default function BlogDetailPage({
   return (
     <section className="section-space">
       <article className="site-shell max-w-3xl space-y-6">
-        <Link href="/blog" className="text-xs font-bold uppercase tracking-[0.16em] text-(--color-accent)">
+        <Link href="/blog" className="text-xs font-bold uppercase tracking-[0.16em] text-brand-purple">
           Back to blog
         </Link>
         <p className="eyebrow">{post.category}</p>

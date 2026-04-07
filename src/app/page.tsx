@@ -52,7 +52,7 @@ export default function Home() {
                             <article key={service.title} className={`card p-6 sm:p-8 ${service.className}`}>
                                 <h3 className="text-2xl sm:text-3xl">{service.title}</h3>
                                 <p className="mt-4 text-base font-semibold text-brand-purple">{service.subtitle}</p>
-                                <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-base">{service.text}</p>
+                                <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80 sm:text-base">{service.text}</p>
                             </article>
                         ))}
                     </div>
@@ -68,7 +68,7 @@ export default function Home() {
                         </h2>
                     </article>
                     <article className="card p-6 sm:p-8">
-                        <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
+                        <p className="text-sm leading-relaxed text-(--color-ink)/80 sm:text-base">
                             Clean, functional design is our religion, and Lampson runs the pulpit. Absolutely nothing leaves
                             Brandroad Inc. without his stamp of approval. Kama design yako inatesa users or your logo inakaa template
                             ya make it pop, anaigonga reject on the spot. We fix the chaos so your users do not have to suffer.
@@ -93,7 +93,7 @@ export default function Home() {
                             <article key={project.id} className={`card p-6 ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}`}>
                                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">{project.clientName}</p>
                                 <h3 className="mt-3 text-2xl leading-tight">{project.title}</h3>
-                                <p className="mt-3 text-sm leading-relaxed text-slate-700">{project.theProblem}</p>
+                                <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80">{project.theProblem}</p>
                                 <Link
                                     href={`/projects/${project.slug}`}
                                     className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-brand-purple"
@@ -121,7 +121,7 @@ export default function Home() {
                         {posts.map((post) => (
                             <article key={post.id} className="card p-6">
                                 <h3 className="text-2xl leading-tight">{post.title}</h3>
-                                <p className="mt-3 text-sm leading-relaxed text-slate-700">{post.metaDescription}</p>
+                                <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80">{post.metaDescription}</p>
                                 <Link
                                     href={`/insights/${post.slug}`}
                                     className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-brand-purple"

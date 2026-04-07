@@ -35,19 +35,19 @@ export default function ContactPage() {
           <form className="card grid gap-4 p-5 sm:p-6" action="#">
             <label className="grid gap-1 text-sm">
               Name
-              <input className="rounded-xl border border-(--color-border) bg-(--color-paper) px-3 py-2 outline-none focus:border-(--color-accent)" type="text" name="name" />
+              <input className="rounded-xl border border-(--color-border) bg-(--color-muted-surface) px-3 py-2 outline-none focus:border-brand-purple" type="text" name="name" />
             </label>
             <label className="grid gap-1 text-sm">
               Email
-              <input className="rounded-xl border border-(--color-border) bg-(--color-paper) px-3 py-2 outline-none focus:border-(--color-accent)" type="email" name="email" />
+              <input className="rounded-xl border border-(--color-border) bg-(--color-muted-surface) px-3 py-2 outline-none focus:border-brand-purple" type="email" name="email" />
             </label>
             <label className="grid gap-1 text-sm">
               Where do you know us from?
-              <input className="rounded-xl border border-(--color-border) bg-(--color-paper) px-3 py-2 outline-none focus:border-(--color-accent)" type="text" name="source" />
+              <input className="rounded-xl border border-(--color-border) bg-(--color-muted-surface) px-3 py-2 outline-none focus:border-brand-purple" type="text" name="source" />
             </label>
             <label className="grid gap-1 text-sm">
               Message
-              <textarea className="min-h-36 rounded-xl border border-(--color-border) bg-(--color-paper) px-3 py-2 outline-none focus:border-(--color-accent)" name="message" />
+              <textarea className="min-h-36 rounded-xl border border-(--color-border) bg-(--color-muted-surface) px-3 py-2 outline-none focus:border-brand-purple" name="message" />
             </label>
             <button className="accent-button w-fit" type="submit">
               Submit

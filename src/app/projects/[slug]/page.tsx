@@ -52,21 +52,21 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 <header className="space-y-4">
                     <p className="eyebrow">{project.clientName}</p>
                     <h1 className="max-w-5xl text-5xl leading-[0.93] sm:text-7xl">{project.title}</h1>
-                    <p className="text-sm text-slate-600">{project.headings.join(" • ")}</p>
+                    <p className="text-sm text-(--color-ink)/70">{project.headings.join(" • ")}</p>
                 </header>
 
                 <div className="grid gap-4 lg:grid-cols-3">
                     <section className="card p-6">
                         <h2 className="text-2xl">The Problem</h2>
-                        <p className="mt-3 text-sm leading-relaxed text-slate-700">{project.theProblem}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80">{project.theProblem}</p>
                     </section>
                     <section className="card p-6">
                         <h2 className="text-2xl">The Solution</h2>
-                        <p className="mt-3 text-sm leading-relaxed text-slate-700">{project.theSolution}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80">{project.theSolution}</p>
                     </section>
                     <section className="card p-6">
                         <h2 className="text-2xl">Testimonial</h2>
-                        <p className="mt-3 text-sm leading-relaxed text-slate-700">&quot;{project.testimonialQuote}&quot;</p>
+                        <p className="mt-3 text-sm leading-relaxed text-(--color-ink)/80">&quot;{project.testimonialQuote}&quot;</p>
                         <p className="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">
                             {project.testimonialAuthor} • {project.testimonialRole}
                         </p>

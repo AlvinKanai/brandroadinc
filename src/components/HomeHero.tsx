@@ -19,7 +19,7 @@ export default function HomeHero() {
                         STOP TRAUMATIZING YOUR USERS.
                     </motion.h1>
                     <motion.h2
-                        className="max-w-2xl text-base leading-relaxed text-slate-700 sm:text-xl"
+                        className="max-w-2xl text-base leading-relaxed text-(--color-ink)/80 sm:text-xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
@@ -63,7 +63,7 @@ export default function HomeHero() {
                             className="h-auto w-55 sm:w-67.5"
                         />
                     </motion.div>
-                    <span className="absolute bottom-6 rounded-full border border-brand-purple/20 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-purple">
+                    <span className="absolute bottom-6 rounded-full border border-brand-purple/20 bg-(--color-muted-surface)/95 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-purple">
                         Lampson Asset Placeholder
                     </span>
                 </motion.div>

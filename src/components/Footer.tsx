@@ -16,13 +16,13 @@ const utilityPages = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-(--color-border) bg-white">
+    <footer className="border-t border-(--color-border) bg-background">
       <div className="site-shell py-16 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-5">
             <p className="eyebrow">Massive Contact Footer</p>
             <h2 className="max-w-4xl text-5xl leading-[0.95] sm:text-7xl">LET&apos;S GET TO WORK.</h2>
-            <p className="max-w-xl text-base leading-relaxed text-slate-700 sm:text-lg">
+            <p className="max-w-xl text-base leading-relaxed text-(--color-ink)/80 sm:text-lg">
               Stop procrastinating. Drop your brief, let&apos;s fix that design mess, and launch your product. &quot;Iko Fiti&quot; ndio Amen yetu. 🚀
             </p>
             <form className="mt-6 flex max-w-xl flex-col gap-3 sm:flex-row" aria-label="Email capture form">

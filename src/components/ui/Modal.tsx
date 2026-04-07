@@ -36,7 +36,7 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
         <AnimatePresence>
             {isOpen ? (
                 <motion.div
-                    className="fixed inset-0 z-70 flex items-center justify-center bg-slate-950/55 px-4"
+                    className="fixed inset-0 z-70 flex items-center justify-center bg-brand-purple/18 px-4 backdrop-blur-[2px]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -46,7 +46,7 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
                     onClick={onClose}
                 >
                     <motion.section
-                        className="w-full max-w-xl rounded-2xl border border-brand-purple/20 bg-white p-6 shadow-[0_28px_70px_rgba(15,23,42,0.22)]"
+                        className="w-full max-w-xl rounded-2xl border border-brand-purple/20 bg-(--color-muted-surface) p-6 shadow-[0_28px_70px_rgba(107,33,168,0.18)]"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 10, opacity: 0 }}
@@ -54,11 +54,11 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
                         onClick={(event) => event.stopPropagation()}
                     >
                         <header className="mb-4 flex items-center justify-between gap-4">
-                            <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+                            <h3 className="text-xl font-semibold text-foreground">{title}</h3>
                             <button
                                 type="button"
                                 onClick={onClose}
-                                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 hover:text-slate-900"
+                                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-(--color-border) text-foreground/70 hover:text-foreground"
                                 aria-label="Close modal"
                             >
                                 <X size={18} />

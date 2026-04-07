@@ -51,7 +51,7 @@ export default function InsightDetailPage({ params }: { params: { slug: string }
                 </Link>
                 <header className="space-y-3">
                     <h1 className="text-5xl leading-[0.93] sm:text-7xl">{post.title}</h1>
-                    <p className="text-sm text-slate-600">By {post.authorName}</p>
+                    <p className="text-sm text-(--color-ink)/70">By {post.authorName}</p>
                 </header>
 
                 <section className="card prose-brand p-6 sm:p-8" dangerouslySetInnerHTML={{ __html: post.bodyContent }} />

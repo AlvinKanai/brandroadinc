@@ -18,7 +18,7 @@ export default function GlobalError({
         <div className="site-shell section-space text-center">
             <p className="eyebrow">System Error</p>
             <h1 className="mt-6 text-4xl sm:text-6xl">The design engine tripped.</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-(--color-ink)/80 sm:text-base">
                 We are already debugging this, but you can reload the route and continue where you left off.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
