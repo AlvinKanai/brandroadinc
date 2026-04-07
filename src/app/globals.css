@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-page-bg: #ffffff;
+  --color-ink: #0f172a;
+  --color-brand-purple: #6b21a8;
+  --color-brand-orange: #f97316;
+  --color-muted-surface: #f8fafc;
+  --color-border: #6b21a826;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root.dark {
+  --color-page-bg: #09090b;
+  --color-ink: #f8fafc;
+  --color-brand-purple: #c084fc;
+  --color-brand-orange: #fb923c;
+  --color-muted-surface: #111827;
+  --color-border: #ffffff21;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not(.light) {
+    --color-page-bg: #09090b;
+    --color-ink: #f8fafc;
+    --color-brand-purple: #c084fc;
+    --color-brand-orange: #fb923c;
+    --color-muted-surface: #111827;
+    --color-border: #ffffff21;
   }
 }
 
+@theme inline {
+  --color-background: var(--color-page-bg);
+  --color-foreground: var(--color-ink);
+  --color-brand-purple: var(--color-brand-purple);
+  --color-brand-orange: var(--color-brand-orange);
+  --font-sans: var(--font-jakarta);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 7% 0%, color-mix(in srgb, var(--color-brand-purple), transparent 90%) 0%, transparent 32%),
+    radial-gradient(circle at 96% 24%, color-mix(in srgb, var(--color-brand-orange), transparent 90%) 0%, transparent 34%),
+    var(--color-page-bg);
+  color: var(--color-ink);
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-brand-purple);
+}
+
+.site-shell {
+  margin: 0 auto;
+  width: min(1200px, calc(100% - 2rem));
+}
+
+.section-space {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+.section-space::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--color-brand-purple), transparent 94%) 0%, transparent 46%);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-brand-purple), transparent 62%);
+  background: color-mix(in srgb, var(--color-brand-purple), white 93%);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.card {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-brand-purple), white 95%) 0%, var(--color-muted-surface) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 1.1rem;
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--color-brand-purple), transparent 92%);
+}
+
+.accent-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--color-brand-purple), black 15%);
+  background: linear-gradient(135deg, var(--color-brand-purple) 0%, var(--color-brand-orange) 100%);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.72rem 1.35rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accent-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px #6b21a83b;
+}
+
+.brand-gradient-text {
+  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.prose-brand h2,
+.prose-brand h3 {
+  margin-top: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.prose-brand p,
+.prose-brand li {
+  color: color-mix(in srgb, var(--color-ink), transparent 11%);
+  line-height: 1.65;
 }
