@@ -31,15 +31,15 @@ const sizeClasses: Record<Size, string> = {
 
 const variantClasses: Record<Variant, string> = {
     primary:
-        "bg-brand-purple text-white border border-brand-purple shadow-[0_10px_24px_rgba(107,33,168,0.25)] hover:bg-[#581C87]",
+        "bg-brand-purple !text-white border border-brand-purple shadow-[0_10px_24px_rgba(61,30,45,0.28)] hover:bg-[#2f1623] hover:!text-brand-cream",
     outline:
-        "bg-white text-brand-purple border border-brand-purple/35 hover:border-brand-purple",
-    ghost: "bg-transparent text-brand-purple border border-transparent hover:bg-brand-purple/10",
+        "bg-(--color-muted-surface) text-brand-cream border border-brand-purple/35 hover:border-brand-purple hover:text-brand-orange",
+    ghost: "bg-transparent text-brand-cream border border-transparent hover:bg-brand-red/10 hover:text-brand-orange",
 };
 
 function sharedClasses(variant: Variant, size: Size, className?: string): string {
     return [
-        "inline-flex items-center justify-center rounded-full font-semibold tracking-[0.06em] uppercase transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/55 disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex items-center justify-center rounded-full text-sm font-normal tracking-[0.06em] uppercase transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/55 disabled:pointer-events-none disabled:opacity-50",
         sizeClasses[size],
         variantClasses[variant],
         className ?? "",

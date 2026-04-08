@@ -86,15 +86,15 @@ export default function Header() {
                 <Link
                   href={group.href}
                   className={`inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${isActive(group.href)
-                    ? "text-brand-purple"
-                    : "text-(--color-ink)/85 hover:text-brand-purple"
+                    ? "text-brand-orange"
+                    : "text-(--color-ink)/85 hover:text-brand-orange"
                     }`}
                 >
                   {group.label}
                   <ChevronDown size={14} className="opacity-65" />
                 </Link>
 
-                <div className="invisible absolute left-0 top-8 z-50 w-64 translate-y-1 rounded-2xl border border-(--color-border) bg-(--color-muted-surface) p-3 opacity-0 shadow-[0_20px_45px_rgba(107,33,168,0.16)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="invisible absolute left-0 top-8 z-50 w-64 translate-y-1 rounded-2xl border border-(--color-border) bg-(--color-muted-surface) p-3 opacity-0 shadow-[0_20px_45px_rgba(61,30,45,0.2)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-orange">{group.label}</p>
                   <ul className="mt-1 space-y-1">
                     {group.items.map((item) => (

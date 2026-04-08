@@ -25,7 +25,7 @@ export default function Footer() {
             <p className="max-w-xl text-base leading-relaxed text-(--color-ink)/80 sm:text-lg">
               Stop procrastinating. Drop your brief, let&apos;s fix that design mess, and launch your product. &quot;Iko Fiti&quot; ndio Amen yetu. 🚀
             </p>
-            <form className="mt-6 flex max-w-xl flex-col gap-3 sm:flex-row" aria-label="Email capture form">
+            <form className="mt-6 flex max-w-xl flex-col gap-3 sm:flex-row sm:items-end" aria-label="Email capture form">
               <Input
                 label="Email"
                 hideLabel
@@ -36,7 +36,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="h-11 rounded-full bg-brand-orange px-6 text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-[0_10px_25px_rgba(249,115,22,0.25)] hover:bg-[#EA580C] sm:mt-8 sm:h-12"
+                className="h-11 rounded-full bg-brand-orange px-6 text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-[0_10px_25px_rgba(246,135,31,0.3)] hover:bg-[#d9761a] sm:mt-8 sm:h-12"
                 aria-label="Submit email"
               >
                 Subscribe

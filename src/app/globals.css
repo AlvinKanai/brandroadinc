@@ -1,21 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --color-page-bg: #f7f5ef;
-  --color-ink: #0f172a;
-  --color-brand-purple: #6b21a8;
-  --color-brand-orange: #f97316;
-  --color-muted-surface: #fffdf8;
-  --color-border: #6b21a830;
+  --color-brand-cream: #fed4ac;
+  --color-page-bg: #ffffff;
+  --color-ink: #3d1e2d;
+  --color-brand-purple: #3d1e2d;
+  --color-brand-orange: #f6871f;
+  --color-brand-red: #e21d39;
+  --color-brand-green: #038278;
+  --color-muted-surface: #fff1e2;
+  --color-border: #3d1e2d33;
 }
 
 :root.dark {
-  --color-page-bg: #09090b;
-  --color-ink: #f8fafc;
-  --color-brand-purple: #c084fc;
-  --color-brand-orange: #fb923c;
-  --color-muted-surface: #111827;
-  --color-border: #ffffff21;
+  --color-brand-cream: #fed4ac;
+  --color-page-bg: #1b0f16;
+  --color-ink: #fed4ac;
+  --color-brand-purple: #3d1e2d;
+  --color-brand-orange: #f6871f;
+  --color-brand-red: #e21d39;
+  --color-brand-green: #038278;
+  --color-muted-surface: #26151f;
+  --color-border: #fed4ac36;
 }
 
 @theme inline {
@@ -23,13 +29,16 @@
   --color-foreground: var(--color-ink);
   --color-brand-purple: var(--color-brand-purple);
   --color-brand-orange: var(--color-brand-orange);
+  --color-brand-red: var(--color-brand-red);
+  --color-brand-green: var(--color-brand-green);
+  --color-brand-cream: var(--color-brand-cream);
   --font-sans: var(--font-jakarta);
 }
 
 body {
   background:
-    radial-gradient(circle at 7% 0%, color-mix(in srgb, var(--color-brand-purple), transparent 92%) 0%, transparent 36%),
-    radial-gradient(circle at 96% 24%, color-mix(in srgb, var(--color-brand-orange), transparent 92%) 0%, transparent 40%),
+    radial-gradient(circle at 7% 0%, color-mix(in srgb, var(--color-brand-purple), transparent 93%) 0%, transparent 36%),
+    radial-gradient(circle at 96% 24%, color-mix(in srgb, var(--color-brand-orange), transparent 93%) 0%, transparent 40%),
     var(--color-page-bg);
   color: var(--color-ink);
   font-family: var(--font-jakarta), sans-serif;
@@ -52,7 +61,7 @@ a {
   transition: color 0.2s ease;
 }
 
-a:hover {
+a:hover:not([class*="inline-flex"]):not(.accent-button) {
   color: var(--color-brand-purple);
 }
 
@@ -73,7 +82,7 @@ a:hover {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(120deg, color-mix(in srgb, var(--color-brand-purple), transparent 94%) 0%, transparent 46%);
+  background: linear-gradient(120deg, color-mix(in srgb, var(--color-brand-purple), transparent 94%) 0%, color-mix(in srgb, var(--color-brand-red), transparent 96%) 38%, transparent 62%);
 }
 
 .eyebrow {
@@ -81,7 +90,7 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
   border: 1px solid color-mix(in srgb, var(--color-brand-purple), transparent 62%);
-  background: color-mix(in srgb, var(--color-brand-purple), white 93%);
+  background: color-mix(in srgb, var(--color-brand-purple), var(--color-brand-cream) 94%);
   border-radius: 9999px;
   padding: 0.35rem 0.85rem;
   font-size: 0.76rem;
@@ -91,7 +100,10 @@ a:hover {
 }
 
 .card {
-  background: linear-gradient(180deg, color-mix(in srgb, white, var(--color-brand-purple) 2%) 0%, var(--color-muted-surface) 100%);
+  background:
+    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--color-brand-purple), transparent 90%) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-brand-orange), transparent 90%) 0%, transparent 50%),
+    #ffffff;
   border: 1px solid var(--color-border);
   border-radius: 1.1rem;
   box-shadow: 0 12px 28px color-mix(in srgb, var(--color-brand-purple), transparent 92%);
@@ -107,7 +119,7 @@ a:hover {
   justify-content: center;
   border-radius: 9999px;
   border: 1px solid color-mix(in srgb, var(--color-brand-purple), black 15%);
-  background: linear-gradient(135deg, var(--color-brand-purple) 0%, var(--color-brand-orange) 100%);
+  background: linear-gradient(135deg, var(--color-brand-purple) 0%, var(--color-brand-red) 42%, var(--color-brand-orange) 100%);
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 700;
@@ -118,11 +130,11 @@ a:hover {
 
 .accent-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px #6b21a83b;
+  box-shadow: 0 12px 24px #3d1e2d42;
 }
 
 .brand-gradient-text {
-  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-orange));
+  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-red), var(--color-brand-orange));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

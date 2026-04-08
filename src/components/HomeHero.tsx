@@ -7,26 +7,25 @@ import { LinkButton } from "@/components/ui/Button";
 export default function HomeHero() {
     return (
         <section className="section-space pb-10 pt-12 sm:pt-16">
-            <div className="site-shell grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="site-shell grid items-center gap-10">
                 <div className="space-y-7">
-                    <p className="eyebrow">Design Evangelists</p>
+                    <p className="eyebrow">PRODUCT DESIGN AGENCY</p>
                     <motion.h1
-                        className="max-w-4xl text-5xl leading-[0.9] sm:text-7xl lg:text-6xl"
+                        className="max-w-4xl text-5xl leading-[0.9] sm:text-7xl lg:text-8xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
                     >
-                        BUILD PRODUCTS PEOPLE TRUST ON FIRST CLICK.
+                        Brandroad Inc.
                     </motion.h1>
-                    <motion.h2
-                        className="max-w-2xl text-base leading-relaxed text-(--color-ink)/80 sm:text-xl"
+                    <motion.p
+                        className="max-w-2xl leading-relaxed text-(--color-ink)/80 sm:text-xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
                     >
-                        Bring us the chaos, we will turn it into clarity. From SaaS UX architecture to high-conviction brand systems,
-                        Brandroad helps ambitious teams ship faster, look sharper, and make every user journey feel "iko fiti".
-                    </motion.h2>
+                        We are a startup branding agency in Nairobi building conversion-first product design, websites, and scalable digital systems.
+                    </motion.p>
                     <motion.div
                         className="flex flex-wrap gap-3"
                         initial={{ opacity: 0, y: 20 }}
@@ -48,7 +47,7 @@ export default function HomeHero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
                 >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(107,33,168,0.16),transparent_58%),radial-gradient(circle_at_75%_80%,rgba(249,115,22,0.14),transparent_52%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(61,30,45,0.18),transparent_58%),radial-gradient(circle_at_75%_80%,rgba(246,135,31,0.16),transparent_52%)]" />
                     <motion.div
                         animate={{ y: [0, -10, 0] }}
                         transition={{ repeat: Infinity, duration: 3.4, ease: "easeInOut" }}

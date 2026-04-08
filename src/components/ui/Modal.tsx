@@ -46,7 +46,7 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
                     onClick={onClose}
                 >
                     <motion.section
-                        className="w-full max-w-xl rounded-2xl border border-brand-purple/20 bg-(--color-muted-surface) p-6 shadow-[0_28px_70px_rgba(107,33,168,0.18)]"
+                        className="w-full max-w-xl rounded-2xl border border-brand-purple/20 bg-(--color-muted-surface) p-6 shadow-[0_28px_70px_rgba(61,30,45,0.2)]"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 10, opacity: 0 }}
